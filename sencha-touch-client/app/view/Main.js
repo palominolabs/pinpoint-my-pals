@@ -4,14 +4,14 @@ Ext.define('PinpointMyPals.view.Main', {
     id: 'mainView',
 
     requires: [
-        'PinpointMyPals.view.Pals'
+        'PinpointMyPals.view.pal.List'
     ],
 
     config: {
         autoDestroy: false,
 
         items: [{
-            xclass: 'PinpointMyPals.view.Pals'
+            xclass: 'PinpointMyPals.view.pal.List'
         }]
     }
 });

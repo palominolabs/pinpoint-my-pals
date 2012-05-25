@@ -1,4 +1,4 @@
-Ext.define('PinpointMyPals.view.Pals', {
+Ext.define('PinpointMyPals.view.pal.List', {
     extend: 'Ext.List',
 
     id: 'pals',
