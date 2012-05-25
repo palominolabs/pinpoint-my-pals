@@ -11,7 +11,13 @@ Ext.application({
         'Ext.MessageBox'
     ],
 
+    models: ['Pal'],
+
     views: ['Viewport'],
+
+    controllers: ['Application'],
+
+    stores: ['Pals'],
 
     icon: {
         57: 'resources/icons/Icon.png',

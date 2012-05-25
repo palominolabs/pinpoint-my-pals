@@ -2,7 +2,8 @@ Ext.define("PinpointMyPals.view.Viewport",{
     extend: 'Ext.Container',
 
     requires: [
-        'PinpointMyPals.view.Landing'
+        'PinpointMyPals.view.Landing',
+        'PinpointMyPals.view.Main'
     ],
 
     id: 'viewport',
@@ -17,6 +18,8 @@ Ext.define("PinpointMyPals.view.Viewport",{
         fullscreen: true,
         items: [{
             xclass: 'PinpointMyPals.view.Landing'
+        },{
+            xclass: 'PinpointMyPals.view.Main'
         }]
     }
 });

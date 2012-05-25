@@ -14,6 +14,7 @@ Ext.define("PinpointMyPals.view.Landing", {
         },{
             xtype: 'button',
             text: 'Connect with Facebook',
+            action: 'connectWithFacebook',
             centered: true
         }]
     }
