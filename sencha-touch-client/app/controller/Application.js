@@ -6,7 +6,8 @@ Ext.define('PinpointMyPals.controller.Application', {
             connectWithFacebookButton: 'button[action=connectWithFacebook]',
             viewport: '#viewport',
             mainView: '#mainView',
-            palList: '#pals'
+            palList: '#pals',
+            map: 'map'
         },
         control: {
             connectWithFacebookButton: {
@@ -17,6 +18,9 @@ Ext.define('PinpointMyPals.controller.Application', {
             },
             palList: {
                 itemtap: 'onPalSelect'
+            },
+            map: {
+                maprender: 'onMapRender'
             }
         }
     },
@@ -30,10 +34,20 @@ Ext.define('PinpointMyPals.controller.Application', {
     },
 
     onPalSelect: function(list, index, node, record) {
-        this.getMainView().push({
-            title: [record.get('firstName'), record.get('lastName')].join(' '),
-            html: 'I see you are interested in ' + record.get('firstName') + '.  A fine choice.',
-            styleHtmlContent: true
+        if (!this.showPal) {
+            this.showPal = Ext.create('PinpointMyPals.view.pal.Show');
+        }
+
+        this.showPal.setRecord(record);
+
+        this.getMainView().push(this.showPal);
+    },
+
+    onMapRender: function(component, map, options) {
+        var marker = new google.maps.Marker({
+            position: map.center,
+            title : 'Current Location',
+            map: map
         });
     }
 });
